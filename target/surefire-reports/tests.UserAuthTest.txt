@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: tests.UserAuthTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.02 s <<< FAILURE! - in tests.UserAuthTest
+testNegativeAuthUser{String}[1]  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 73
+Exception Details:
+  Location:
+    lib/ApiCoreRequests.makePostRequest(Ljava/lang/String;Ljava/util/Map;)Lio/restassured/response/Response; @19: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b3a 042c 3a05 b200 7f2a 2a19 0419 05b8
+    0000010: 0079 4eb8 0068 2db6 006c b800 07bb 000d
+    0000020: 59b7 000f b900 1002 002c b900 3102 002b
+    0000030: 03bd 0002 b900 3503 00c0 002b b900 2d01
+    0000040: 00c0 002b 3a07 a700 103a 06b8 0068 1906
+    0000050: b600 7019 06bf b800 68b6 0073 1907 b0  
+  Exception Handler Table:
+    bci [19, 73] => handler: 73
+
+	at tests.UserAuthTest.<init>(UserAuthTest.java:27)
+
+testNegativeAuthUser{String}[2]  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 73
+Exception Details:
+  Location:
+    lib/ApiCoreRequests.makePostRequest(Ljava/lang/String;Ljava/util/Map;)Lio/restassured/response/Response; @19: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b3a 042c 3a05 b200 7f2a 2a19 0419 05b8
+    0000010: 0079 4eb8 0068 2db6 006c b800 07bb 000d
+    0000020: 59b7 000f b900 1002 002c b900 3102 002b
+    0000030: 03bd 0002 b900 3503 00c0 002b b900 2d01
+    0000040: 00c0 002b 3a07 a700 103a 06b8 0068 1906
+    0000050: b600 7019 06bf b800 68b6 0073 1907 b0  
+  Exception Handler Table:
+    bci [19, 73] => handler: 73
+
+	at tests.UserAuthTest.<init>(UserAuthTest.java:27)
+
+testAuthUser  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 73
+Exception Details:
+  Location:
+    lib/ApiCoreRequests.makePostRequest(Ljava/lang/String;Ljava/util/Map;)Lio/restassured/response/Response; @19: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b3a 042c 3a05 b200 7f2a 2a19 0419 05b8
+    0000010: 0079 4eb8 0068 2db6 006c b800 07bb 000d
+    0000020: 59b7 000f b900 1002 002c b900 3102 002b
+    0000030: 03bd 0002 b900 3503 00c0 002b b900 2d01
+    0000040: 00c0 002b 3a07 a700 103a 06b8 0068 1906
+    0000050: b600 7019 06bf b800 68b6 0073 1907 b0  
+  Exception Handler Table:
+    bci [19, 73] => handler: 73
+
+	at tests.UserAuthTest.<init>(UserAuthTest.java:27)
+
