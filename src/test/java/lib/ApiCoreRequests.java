@@ -56,4 +56,20 @@ public class ApiCoreRequests {
                 .body(params)
                 .post("https://playground.learnqa.ru/api/user/");
     }
+
+    public static Response authorizeUser(String email, String password) {
+        return RestAssured.given()
+                .baseUri("https://playground.learnqa.ru")
+                .contentType("application/json")
+                .body("{\"email\":\"" + email + "\", \"password\":\"" + password + "\"}")
+                .post("/api/user/login");
+    }
+
+    public static Response getUserData(int userId, String header, String cookie) {
+        return RestAssured.given()
+                .baseUri("https://playground.learnqa.ru")
+                .header("x-csrf-token", header)
+                .cookie("auth_sid", cookie)
+                .get("/ajax/api/user/" + userId);
+    }
 }
