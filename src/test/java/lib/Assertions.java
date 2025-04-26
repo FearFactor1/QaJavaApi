@@ -51,4 +51,9 @@ public class Assertions {
     public static void assertJsonHasNotField(Response Response, String unexpectedFieldName) {
         Response.then().assertThat().body("$", not(hasKey(unexpectedFieldName)));
     }
+
+    public static void assertResponseStatusCode(Response response, int expectedStatusCode) {
+        assert response.getStatusCode() == expectedStatusCode :
+                "Expected status code " + expectedStatusCode + " but got " + response.getStatusCode();
+    }
 }
