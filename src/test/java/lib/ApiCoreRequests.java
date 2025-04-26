@@ -2,6 +2,7 @@ package lib;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 
@@ -46,5 +47,13 @@ public class ApiCoreRequests {
                 .body(authData)
                 .post(url)
                 .andReturn();
+    }
+
+    @Step("Создание пользователя с параметрами: {params}")
+    public Response createUser(Map<String, String> params) {
+        return RestAssured
+                .given()
+                .body(params)
+                .post("https://playground.learnqa.ru/api/user/");
     }
 }
