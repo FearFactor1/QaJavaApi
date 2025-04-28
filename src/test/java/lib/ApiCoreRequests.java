@@ -65,6 +65,7 @@ public class ApiCoreRequests {
                 .post("/api/user/login");
     }
 
+    @Step("Получить данные пользователя по ID")
     public static Response getUserData(int userId, String header, String cookie) {
         return RestAssured.given()
                 .baseUri("https://playground.learnqa.ru")
@@ -147,6 +148,17 @@ public class ApiCoreRequests {
                 .andReturn();
 
         return getCookie(response, "auth_sid");
+    }
+
+    @Step("Удалить пользователя по ID")
+    public Response deleteUser(int userId, String cookie) {
+        return RestAssured
+                .given()
+                .baseUri("https://playground.learnqa.ru/api")
+                .cookie("auth_sid", cookie)
+                .when()
+                .delete("/user/" + userId)
+                .andReturn();
     }
 
     public String getCookie(Response response, String cookieName) {
