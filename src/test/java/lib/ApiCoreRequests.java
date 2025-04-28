@@ -57,6 +57,7 @@ public class ApiCoreRequests {
                 .post("https://playground.learnqa.ru/api/user/");
     }
 
+    @Step("Авторизация пользователя")
     public static Response authorizeUser(String email, String password) {
         return RestAssured.given()
                 .baseUri("https://playground.learnqa.ru")
@@ -74,6 +75,7 @@ public class ApiCoreRequests {
                 .get("/ajax/api/user/" + userId);
     }
 
+    @Step("Регистрация пользователя")
     public String registerUser(Map<String, String> userData) {
         Response response = RestAssured
                 .given()
@@ -89,6 +91,7 @@ public class ApiCoreRequests {
         return response.jsonPath().getString("id");
     }
 
+    @Step("Вход пользователем")
     public String loginUser(Map<String, String> userData) {
         Response response = RestAssured
                 .given()
@@ -100,6 +103,7 @@ public class ApiCoreRequests {
         return getCookie(response, "auth_sid"); // Возвращаем значение куки
     }
 
+    @Step("Редактирование пользователя без авторизации")
     public Response editUserDataWithoutAuth(String userId, String newName) {
         return RestAssured
                 .given()
@@ -108,6 +112,7 @@ public class ApiCoreRequests {
                 .andReturn();
     }
 
+    @Step("Редактирование пользователя с авторизацией")
     public Response editUserDataWithAuth(String userId, String newName, String authCookie) {
         return RestAssured
                 .given()
@@ -117,6 +122,7 @@ public class ApiCoreRequests {
                 .andReturn();
     }
 
+    @Step("Редактирование емейл пользователя")
     public Response editUserEmail(String userId, String newEmail, String authCookie) {
         return RestAssured
                 .given()
@@ -126,6 +132,7 @@ public class ApiCoreRequests {
                 .andReturn();
     }
 
+    @Step("Редактирование имя пользователя")
     public Response editUserFirstName(String userId, String newFirstName, String authCookie) {
         return RestAssured
                 .given()
@@ -135,6 +142,7 @@ public class ApiCoreRequests {
                 .andReturn();
     }
 
+    @Step("Зарегистрировать логин пользователя")
     public String registerAndLoginUser(Map<String, String> userData) {
         RestAssured
                 .given()
