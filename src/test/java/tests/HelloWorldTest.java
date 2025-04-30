@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Severity;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import io.restassured.RestAssured;
@@ -7,8 +8,11 @@ import io.restassured.RestAssured;
 import java.util.HashMap;
 import java.util.Map;
 
+import static io.qameta.allure.SeverityLevel.BLOCKER;
+
 public class HelloWorldTest {
 
+    @Severity(value = BLOCKER)
     @Test
     public void testRestAssured() {
         Map<String, String> data = new HashMap<>();

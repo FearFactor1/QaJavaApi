@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Issue;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import java.util.List;
 
 public class GetSecretPasswordHomeWorkTest {
 
+    @Issue(value = "JIRA-127")
     @Test
     public void testSecretPasswordHomeWork() {
         List<String> passwords = List.of(

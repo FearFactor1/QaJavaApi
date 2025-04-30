@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HelloWorldAssertTest {
 
+    @Owner(value = "Иванов Иван Сергеевич")
     @ParameterizedTest
     @ValueSource(strings = {"", "John", "Pete"})
     public void testHelloMethodWithoutName(String name) {
